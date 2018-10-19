@@ -1,5 +1,5 @@
-## users api data wireframe
-A library of scripts designed to call & retrieve data from our Users API
+## data wireframe boilerplate
+A library of scripts designed to call & retrieve data from our an API
 
 # setup
 First, you will need to add a file to the root directory of this repo, titled "main_config.json". It's contents should look something like this:
@@ -22,21 +22,7 @@ Next, you will need to create a `error_log.json` file within the `/error_logs` d
 ### main scripts
 Within your terminal, navigate to the `scripts` directory, then you can run the following commands:
 
-- `node auth_sign_up.js :idx:`
-- `node auth_confirm_acct.js :accessToken:`
-- `node auth_sign_in.js :idx:`
-- `node auth_ping.js`
-- `node auth_change_pw.js :newPassword:`
-- `node auth_req_pw_reset.js`
-- `node auth_reset_pw.js :resetToken:`
-- `node auth_two_factor_get.js`
-- `node auth_two_factor_confirm.js :pin:`
-- `node auth_two_factor_post.js :pin:`
-- `node auth_sign_out.js`
-- `node users_me.js`
-- `node users_me_profile.js`
-- `node users_me_profile_patch.js :idx:`
-- `node gen_qr_img.js`
+TODO: Add scripts here
 
 Each script will create a file within the `/data ` dir, read more about these files [here](./data/README.md).
 
@@ -49,7 +35,3 @@ Executing this index script will run through all the other scripts, in a sequent
 
 ### legend for explaining the parameters
 - `:idx:` - a positive integer between 0 - 9999
-- `:accessToken:` - a long hashed string retrieved from email
-- `:resetToken:` - a long hashed string retrieved from email
-- `:newPassword:` - a string of your choice
-- `:pin:` - a six digit pin obtained through authenticator app
