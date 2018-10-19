@@ -1,2 +1,2 @@
 rm -v data/*.json
-rm -v data/img.png
+# rm -v data/img.png

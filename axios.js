@@ -24,42 +24,42 @@ axios.interceptors.response.use((response) => {
   return Promise.reject(error);
 });
 
-const setToken = (axiosInstance) => {
-  return new Promise((resolve, reject) => {
-    try {
-      futil.readJSON('../data/auth_sign_in.json', (json) => {
-        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
-        resolve(axiosInstance);
+// const setToken = (axiosInstance) => {
+//   return new Promise((resolve, reject) => {
+//     try {
+//       futil.readJSON('../data/auth_sign_in.json', (json) => {
+//         axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
+//         resolve(axiosInstance);
 
-      });
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
+//       });
+//     } catch (error) {
+//       reject(error);
+//     }
+//   });
+// };
 
-const setAuth = (axiosInstance) => {
-  return new Promise((resolve, reject) => {
-    try {
-      futil.readJSON('../data/auth_sign_in.json', (json) => {
-        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
+// const setAuth = (axiosInstance) => {
+//   return new Promise((resolve, reject) => {
+//     try {
+//       futil.readJSON('../data/auth_sign_in.json', (json) => {
+//         axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
 
-        if (json.data.twoFactor) {
+//         if (json.data.twoFactor) {
 
-          futil.readJSON('../data/auth_two_factor_post.json', (json) => {
-            axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
-            resolve(axiosInstance);
+//           futil.readJSON('../data/auth_two_factor_post.json', (json) => {
+//             axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${json.headers["x-auth"]}`;
+//             resolve(axiosInstance);
 
-          });
+//           });
 
-        } else {
-          resolve(axiosInstance);
-        }
-      });
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
+//         } else {
+//           resolve(axiosInstance);
+//         }
+//       });
+//     } catch (error) {
+//       reject(error);
+//     }
+//   });
+// };
 
-module.exports = { axios, setAuth, setToken };
+module.exports = { axios /*, setAuth, setToken */ };
