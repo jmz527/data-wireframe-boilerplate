@@ -62,4 +62,15 @@ axios.interceptors.response.use((response) => {
 //   });
 // };
 
-module.exports = { axios /*, setAuth, setToken */ };
+const normalizeResponse = (res) => {
+  return {
+    // config: res.config,
+    data: res.data,
+    headers: res.headers,
+    // request: res.request,
+    status: res.status,
+    statusText: res.statusText
+  };
+};
+
+module.exports = { axios, /* setAuth, setToken, */ normalizeResponse };
